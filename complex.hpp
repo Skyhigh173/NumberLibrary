@@ -495,8 +495,8 @@ namespace nl {
       if (z.r < 0.5) {
         // reflection formula
         // Γ(z)Γ(1-z) = pi / sin(pi * z)
-        // Γ(z) = pi / sin(pi * z) * Γ(1-z)
-        return pi / (pi * z).sin() * complex::gamma(1 - z);
+        // Γ(z) = pi / sin(pi * z) / Γ(1-z)
+        return pi / ((pi * z).sin() * complex::gamma(1 - z));
       } else {
         // Lanczos approximation
         // Γ(z) = sqrt(2pi) * (z+g+0.5)^(z+0.5) * exp(-(z+g+0.5)) * Ag(z)
